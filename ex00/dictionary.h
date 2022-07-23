@@ -6,11 +6,11 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:23:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 14:52:45 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:30:20 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef DICTIONARY
-#define DICTIONARY
+# ifndef DICTIONARY
+# define DICTIONARY
 typedef	struct entry
 {
 	int		key;
@@ -34,4 +34,4 @@ void	free_dict(dict *dict);
 int	index_of(dict *dict, int key);
 //	todo : table de hachage de tel sorte que dict->entries[key] renvoie
 //		   la bonne entry
-#endif
+# endif

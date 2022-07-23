@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:17:45 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 18:05:39 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:30:24 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "translation.h"
@@ -55,10 +55,8 @@ int	get_the_nth_nb(int nb, int n)
 		{
 			power++;
 			current /= 10;
-			printf("POWERING : %d\n", current);
 		}
 		res *= 10;
-		printf("current : %d", current);
 		res += current % 10;
 		count++;
 	}
@@ -124,6 +122,5 @@ int	main(int ac, char **av)
 	dico->entries[1].value = "two";
 	dico->entries[2].value = "hundred";
 	dico->entries[3].value = "thousand";
-	printf("test : %d \n", get_the_nth_nb(1245,3));
 	itoe(ft_atoi(av[1]), dico);	
 }
