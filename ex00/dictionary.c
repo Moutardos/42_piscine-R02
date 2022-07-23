@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:16:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 14:55:08 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 15:07:55 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -36,6 +36,7 @@ dict	*init_dict(int file, int capacity)
 		//dict[count]
 		count++;
 	}
+	dict->capacity = capacity;
 	return dict;
 }
 
@@ -58,3 +59,15 @@ int	index_of(dict *dict, int key)
 	}
 	return  (-1);
 }
+
+/*
+int	main(void)
+{
+	dict	*dico;
+	dico = init_dict(0, 2);
+	dico->entries[0].key = 1;
+	dico->entries[1].key = 9;
+	dico->entries[0].value = "GG";
+	printf("key -> %d value ->%s\n", 1, dico->entries[index_of(dico, 1)].value);
+}
+*/
