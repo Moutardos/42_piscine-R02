@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:16:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 13:04:45 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:12:12 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -32,7 +32,8 @@ dict	*init_dict(int file, int capacity)
 	count = 0;
 	while (count < capacity)
 	{
-		//remplir le tab
+		//remplir le dict
+		//dict[count]
 		count++;
 	}
 	return dict;
