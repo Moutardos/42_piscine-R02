@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:16:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 15:07:55 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 15:24:19 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -23,7 +23,7 @@ dict	*init_dict(int file, int capacity)
 	dict = malloc(sizeof(dict));
 	if (dict == NULL)
 		return (NULL);
-	dict->entries = malloc(sizeof(entry) * dict->capacity);
+	dict->entries = malloc(sizeof(entry) * capacity);
 	if (dict->entries == NULL)
 	{
 		free(dict);
@@ -32,8 +32,7 @@ dict	*init_dict(int file, int capacity)
 	count = 0;
 	while (count < capacity)
 	{
-		//remplir le dict
-		//dict[count]
+		//
 		count++;
 	}
 	dict->capacity = capacity;
