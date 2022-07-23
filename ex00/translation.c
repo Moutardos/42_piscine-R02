@@ -6,12 +6,12 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:17:45 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 17:06:08 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 18:05:39 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "translation.h"
 #include "utility.h"
-
+#include <stdio.h>
 int	ft_atoi(char *str)
 {
 	int	is_neg;
@@ -37,10 +37,38 @@ int	ft_atoi(char *str)
 	}
 	return (result);	
 }
+
+int	get_the_nth_nb(int nb, int n)
+{
+	int res;
+	int count;
+	int	power;
+	int	current;
+
+	count = 0;
+	res = 0;
+	while (count < n)
+	{
+		power = 0;
+		current = nb;
+		while (power < n - count - 1)
+		{
+			power++;
+			current /= 10;
+			printf("POWERING : %d\n", current);
+		}
+		res *= 10;
+		printf("current : %d", current);
+		res += current % 10;
+		count++;
+	}
+	return res;
+}
 void	display_numb(int nb, int pack, int size, dict *dict, int* fst_nb)
 {
 	int	current;
 	int	counter;
+	int res;
 
 	counter = 0;
 	current = nb;
@@ -52,6 +80,13 @@ void	display_numb(int nb, int pack, int size, dict *dict, int* fst_nb)
 			ft_putstr(dict->entries[index_of(dict, current)].value, fst_nb);
 		ft_putstr(dict->entries[index_of(dict, 100)].value, fst_nb);
 	}
+	counter = 0;
+	res = 1;
+	while (counter++ < pack)
+		res *= 1000;
+	printf("\nDEBUG:%d \n", res);
+	if (res > 1)
+		ft_putstr(dict->entries[index_of(dict, res)].value, fst_nb);
 }
 char	*itoe(int nb, dict *dict)
 {
@@ -61,12 +96,19 @@ char	*itoe(int nb, dict *dict)
 
 	fst_nb = 1;
 	size = len_nb(nb);
-	pack = size/3;
-	while (pack > 0)
+	pack = (size - 1)/3;
+	printf("nb : %d; size : %d; pack : %d", nb, size, pack);
+	while (pack >= 0)
 	{
 		display_numb(nb, pack, size, dict, &fst_nb);
-		pack -= 1;
-		nb /= 100;
+		pack -=1;
+		nb /= 10;
+		size = len_nb(nb);
+		while (size % 3 != 0 && size != 1) 
+		{
+			nb %= 10;
+			size = len_nb(nb);
+		}
 	}
 }
 
@@ -82,5 +124,6 @@ int	main(int ac, char **av)
 	dico->entries[1].value = "two";
 	dico->entries[2].value = "hundred";
 	dico->entries[3].value = "thousand";
+	printf("test : %d \n", get_the_nth_nb(1245,3));
 	itoe(ft_atoi(av[1]), dico);	
 }
