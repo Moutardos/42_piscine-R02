@@ -6,11 +6,11 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:17:01 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 14:59:47 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 17:08:47 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utility.h"
-
+#include <unistd.h>
 int	ft_strlen(char *str)
 {
 	int	count;
@@ -21,16 +21,15 @@ int	ft_strlen(char *str)
 	return count;
 }
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putstr(char *str, int *fst_nb)
 {
-	while (*s1 == *s2 && (*s1 != '\0'))
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	if (*fst_nb)
+		*fst_nb = 0;
+	else
+		write(1, " ", 1);
+	while (*str != '\0')
+		write(1, str++, 1);
 }
-
 int	ft_isspace(char c)
 {
 	if (c == ' ')

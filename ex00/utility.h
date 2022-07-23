@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:23:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 14:59:29 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/23 17:05:53 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef UTILITY
@@ -14,8 +14,8 @@
 //	return the length of a string
 int	ft_strlen(char *str);
 
-//	compare two string, 0 if equal;
-int	ft_strcmp(char *s1, char *s2);
+//	output str, if fst_nb is 0, it doesnt do a space
+void	ft_putstr(char *str, int *fst_nb);
 
 //	return 1 if character is blank
 int	ft_isspace(char c);
