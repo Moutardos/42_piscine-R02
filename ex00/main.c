@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 11:16:54 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/24 17:22:03 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/07/24 23:13:25 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/07/24 23:13:29 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "condition.h"
@@ -20,7 +20,7 @@
 int	main(int ac, char **av)
 {
 
-	dict	*dico;
+	s_dict	*dico;
 	char* 	dictpath;
 	char*	nb;
 	int	file;

@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   search.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
+/*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:24:33 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/24 20:24:38 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/07/24 23:15:49 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/07/24 23:15:52 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef SEARCH
 # define SEARCH
 

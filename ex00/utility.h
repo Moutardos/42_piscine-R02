@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 11:23:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 17:05:53 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/07/24 23:16:03 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/07/24 23:16:05 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef UTILITY
 #define UTILITY
 //	return the length of a string

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gestion.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/24 23:13:15 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/07/24 23:13:19 by lcozdenm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
@@ -29,9 +40,9 @@ int count_size_line(char *path, int nbline)
 }
 
 
-dict	*attribution(char *path)
+s_dict	*attribution(char *path)
 {
-	dict * dico;
+	s_dict * dico;
 	int	max_lign;
 	int	nb_lign;
 		

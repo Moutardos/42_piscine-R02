@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 11:16:44 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/24 21:10:47 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/07/24 23:13:01 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/07/24 23:13:04 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "display.h"
 #include "utility.h"
 #include <stddef.h>
@@ -28,7 +29,7 @@ void	ft_putstr(char *str, int *fst_nb)
 		write(1, str++, 1);
 }
 
-int	display_number(dict *dico, char* num)
+int	display_number(s_dict *dico, char* num)
 {
 	s_neo_number	*nn;
 	int		counter;
@@ -49,15 +50,13 @@ int	display_number(dict *dico, char* num)
 		return (0);
 	}
 	while(counter <= nn->pack)
-	{
-		display_nth_pack(dico, nn, counter, &fst_nb);
-		counter++;
-	}
+		display_nth_pack(dico, nn, counter++, &fst_nb);
 	free_dict(dico);
+	free_nn(nn);
 	return (0);
 }
 
-int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
+int	display_nth_pack(s_dict *dico, s_neo_number *nn, int n, int *fst_nb)
 {
 	int	*curr;
 	char	digit[2];
@@ -86,7 +85,7 @@ int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
 	return (0);
 }
 
-int	display_ten(dict *dico, int *value, int *fst_nb)
+int	display_ten(s_dict *dico, int *value, int *fst_nb)
 {
 	char	digit2[3];
 	
@@ -106,7 +105,7 @@ int	display_ten(dict *dico, int *value, int *fst_nb)
 	return (0);;
 }
 
-int	display_power(dict *dico, int pack, int *fst_nb)
+int	display_power(s_dict *dico, int pack, int *fst_nb)
 {
 	int	count;
 	int	index;
