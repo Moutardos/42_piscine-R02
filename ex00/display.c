@@ -31,6 +31,7 @@ int	display_number(dict *dico, char* num)
 	int		counter;
 	int		fst_nb;
 
+	printf("dico[%d]->  (%s,%s)\n", 0,dico->entries[0].key ,dico->entries[0].value);
 	fst_nb = 1;
 	nn = atonn(num);
 	if (nn == NULL)

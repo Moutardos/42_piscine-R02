@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 char		*f_word(int lign, char *path)
 {
 	char	*val;
@@ -21,14 +22,14 @@ char		*f_word(int lign, char *path)
 			line_count++;
 		read(file, buf, 1);
 	}
-	while ((*buf >= 0 && *buf <= 9) && (*buf != '\n'))
+	while ((*buf >= '0' && *buf <= '9') && (*buf != '\n'))
 	{
 		val[i] = *buf;
 		read(file, buf, 1);
 		i++;
 		
 	}
-	val[i] = '\0';    
+	val[i] = '\0';
 	close(file);
 	return (val);
 }
@@ -52,7 +53,11 @@ char		*l_word(int lign, char *path)
 			line_count++;
 		read(file, buf, 1);
 	}
-	while (((*buf >= 'Z' && *buf <= 'A') || (*buf >= 'Z' && *buf <= 'A')) && (*buf != '\n'))
+	while ((!((*buf <= 'Z' && *buf >= 'A') || (*buf <= 'z' && *buf >= 'a'))) && (*buf != '\n'))
+	{
+		read(file, buf, 1);	
+	}
+	while (((*buf <= 'Z' && *buf >= 'A') || (*buf <= 'z' && *buf >= 'a')) && (*buf != '\n'))
 	{
 		val[i] = *buf;
 		read(file, buf, 1);

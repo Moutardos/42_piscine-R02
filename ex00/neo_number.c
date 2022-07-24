@@ -80,37 +80,3 @@ void	free_nn(s_neo_number *nn)
 	free(nn->value);
 	free(nn);
 }
-
-// TODO DELETE
-void	display_nn(s_neo_number *nn)
-{
-	int	count;
-
-	count = 0;
-	printf("PRINTING NN: PACK %d \n", nn->pack);
-	while(count <= nn->pack)
-	{
-		printf("[%d %d %d] ", nn->value[count][0], nn->value[count][1], nn->value[count][2]);
-		count++;
-	}
-	printf("\n");
-}
-
-/*
-
-
-int	main(int ac, char** av)
-{
-	int		*tab;
-	s_neo_number	*nn;
-
-	nn = atonn(av[1]);
-	if (nn == NULL)
-		return (1);
-	display_nn(nn);
-	free_nn(nn);
-}
-
-*/
-
-
