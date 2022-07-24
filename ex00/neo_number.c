@@ -6,7 +6,7 @@
 /*   By: loic <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 13:36:01 by loic              #+#    #+#             */
-/*   Updated: 2022/07/24 16:17:08 by loic             ###   ########.fr       */
+/*   Updated: 2022/07/24 21:17:37 by loic             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "neo_number.h"
@@ -95,7 +95,10 @@ void	display_nn(s_neo_number *nn)
 	}
 	printf("\n");
 }
+
 /*
+
+
 int	main(int ac, char** av)
 {
 	int		*tab;
@@ -107,4 +110,7 @@ int	main(int ac, char** av)
 	display_nn(nn);
 	free_nn(nn);
 }
+
 */
+
+

@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:17:01 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 17:08:47 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:16:54 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utility.h"
@@ -21,15 +21,6 @@ int	ft_strlen(char *str)
 	return count;
 }
 
-void	ft_putstr(char *str, int *fst_nb)
-{
-	if (*fst_nb)
-		*fst_nb = 0;
-	else
-		write(1, " ", 1);
-	while (*str != '\0')
-		write(1, str++, 1);
-}
 int	ft_isspace(char c)
 {
 	if (c == ' ')
@@ -49,4 +40,14 @@ int	len_nb(int nb)
 		size++;
 	}
 	return size;
+}
+
+int	ft_strcmp(char *str1, char *str2)
+{
+	while (*str1 == *str2 && *str1 != '\0')
+	{
+		str1++;
+		str2++;
+	}
+	return (*str1 - *str2);
 }

@@ -14,6 +14,8 @@
 //	return the length of a string
 int	ft_strlen(char *str);
 
+int	ft_strcmp(char *str1, char *str2);
+
 //	output str, if fst_nb is 0, it doesnt do a space
 void	ft_putstr(char *str, int *fst_nb);
 

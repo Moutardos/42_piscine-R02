@@ -6,20 +6,20 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:16:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 15:24:19 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:18:19 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include "dictionary.h"
-dict	*init_dict(int file, int capacity)
+#include "utility.h"
+
+dict	*init_dict(int capacity)
 {
 	dict	*dict;
 	int		count;
 
-	if (file == -1)
-		return (NULL);
 	dict = malloc(sizeof(dict));
 	if (dict == NULL)
 		return (NULL);
@@ -45,28 +45,16 @@ void	free_dict(dict *dict)
 	free(dict);
 }
 
-int	index_of(dict *dict, int key)
+int	index_of(dict *dict, char *key)
 {
 	int count;
 
 	count = 0;
 	while (count < dict->capacity)
 	{
-		if (dict->entries[count].key == key)
+		if (ft_strcmp(dict->entries[count].key,key) == 0)
 			return (count);
 		count++;
 	}
 	return  (-1);
 }
-
-/*
-int	main(void)
-{
-	dict	*dico;
-	dico = init_dict(0, 2);
-	dico->entries[0].key = 1;
-	dico->entries[1].key = 9;
-	dico->entries[0].value = "GG";
-	printf("key -> %d value ->%s\n", 1, dico->entries[index_of(dico, 1)].value);
-}
-*/
