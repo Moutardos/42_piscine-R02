@@ -6,14 +6,14 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:23:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/07/23 19:30:20 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/07/24 14:04:39 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # ifndef DICTIONARY
 # define DICTIONARY
 typedef	struct entry
 {
-	int		key;
+	char	*key;
 	char	*value;
 } entry;
 
