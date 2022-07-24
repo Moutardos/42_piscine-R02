@@ -21,7 +21,7 @@ int     display_number(dict *dico, char* num);
 int     display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb);
 
 //      Display the ten of the number, return 1 if it include the unit digit
-int     display_ten(dict *dico, s_neo_number *nn, int *value, int *fst_nb);
+int     display_ten(dict *dico, int *value, int *fst_nb);
 
 //      Display the power of the pack
 int     display_power(dict *dico, int pack, int *fst_nb);

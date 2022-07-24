@@ -31,7 +31,6 @@ int	display_number(dict *dico, char* num)
 	int		counter;
 	int		fst_nb;
 
-	printf("dico[%d]->  (%s,%s)\n", 0,dico->entries[0].key ,dico->entries[0].value);
 	fst_nb = 1;
 	nn = atonn(num);
 	if (nn == NULL)
@@ -59,9 +58,6 @@ int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
 {
 	int	*curr;
 	char	digit[2];
-	char	digit2[3];
-	int	counter;
-	int	res;
 	
 	curr = nn->value[n];
 	if (curr[0] != 0)
@@ -74,7 +70,7 @@ int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
 		}
 		ft_putstr(dico->entries[index_of(dico, "100")].value, fst_nb);
 	}
-	if (display_ten(dico, nn, curr, fst_nb))
+	if (display_ten(dico, curr, fst_nb))
 		return (0);
 	if (curr[2] != 0)
 	{
@@ -86,7 +82,7 @@ int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
 	return (0);
 }
 
-int	display_ten(dict *dico, s_neo_number *nn, int *value, int *fst_nb)
+int	display_ten(dict *dico, int *value, int *fst_nb)
 {
 	char	digit2[3];
 	
