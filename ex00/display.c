@@ -1,4 +1,4 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
@@ -17,10 +17,13 @@
 #include <stdlib.h>
 void	ft_putstr(char *str, int *fst_nb)
 {
-	if (*fst_nb)
-		*fst_nb = 0;
-	else
-		write(1, " ", 1);
+	if (fst_nb != NULL)
+	{
+		if (*fst_nb)
+			*fst_nb = 0;
+		else
+			write(1, " ", 1);
+	}
 	while (*str != '\0')
 		write(1, str++, 1);
 }
@@ -70,13 +73,14 @@ int	display_nth_pack(dict *dico, s_neo_number *nn, int n, int *fst_nb)
 		}
 		ft_putstr(dico->entries[index_of(dico, "100")].value, fst_nb);
 	}
-	if (display_ten(dico, curr, fst_nb))
-		return (0);
-	if (curr[2] != 0)
-	{
+	if (!display_ten(dico, curr, fst_nb))
+	{	
+		if ((curr[2] != 0))
+		{
 			digit[0] = curr[2] + '0';
 			digit[1] = '\0';
 			ft_putstr(dico->entries[index_of(dico, digit)].value, fst_nb);
+		}
 	}
 	display_power(dico, nn->pack - n, fst_nb);
 	return (0);

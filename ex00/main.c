@@ -9,25 +9,47 @@
 /*   Updated: 2022/07/24 17:22:03 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "condition.h"
 #include "dictionary.h"
 #include "display.h"
 #include "gestion.h"
+#include <stddef.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 int	main(int ac, char **av)
 {
 
 	dict	*dico;
-
-	dico = attribution("numbers.dict");
-	/*dico = init_dict(0, 5);
-	dico->entries[2].key = "1000";
-	dico->entries[0].key = "10";
-	dico->entries[1].key = "100";
-	dico->entries[3].key = "1";
-	dico->entries[4].key = "1000000";
-	dico->entries[0].value = "dix";
-	dico->entries[1].value = "cent";
-	dico->entries[2].value = "mille";
-	dico->entries[3].value = "un";*/
-
-	display_number(dico, av[1]);
+	char* 	dictpath;
+	char*	nb;
+	int	file;
+	
+	if (ac > 3 || ac == 1)
+	{
+		ft_putstr("Error\n", NULL);
+		return (1);
+	}
+	if (ac == 3)
+	{
+		dictpath = av[1];
+		nb = av[2];
+	}
+	else
+	{
+		nb = av[1];
+		dictpath = "numbers.dict";
+	}
+	if (!is_numb(nb))
+		ft_putstr("Error\n", NULL);
+	file = open(dictpath, O_RDONLY);
+	if (file == -1)
+	{
+		ft_putstr("Dict Error\n", NULL);
+		return (1);
+	}
+	close(file);
+	dico = attribution(dictpath);
+	display_number(dico, nb);
+	return (0);
 }
